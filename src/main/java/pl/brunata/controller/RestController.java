@@ -28,6 +28,8 @@ public class RestController {
     }
 
     @GetMapping
+    @ResponseBody
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public String check(){
         return "HiHI";
     }
