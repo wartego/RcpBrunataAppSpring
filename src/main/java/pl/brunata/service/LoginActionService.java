@@ -12,13 +12,11 @@ public class LoginActionService {
 
     private LoginAndPasword loginAndPasword;
 
-    public void loginAction(){
-
+    public String loginAction(){
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://rcp.brunata-zenner.pl/");
         driver.manage().window().maximize();
-        System.out.println("Hello world!");
 
         WebElement element = driver.findElement(By.xpath("//*[@id=\"LogOnButton\"]/div"));
         element.click();
@@ -33,20 +31,27 @@ public class LoginActionService {
 
         WebElement employeeData = driver.findElement(By.xpath("//*[@id=\"menu\"]/div[1]"));
         employeeData.click();
+
+        WebElement table = driver.findElement(By.xpath("//*[@id=\"beginEndPartial\"]"));
+
+        String text = table.getText();
+
+        System.out.println(text);
+        driver.close();
+        return text;
     }
 
-    public void startWorkTime(LoginAndPasword loginAndPasword){
+    public String startWorkTime(LoginAndPasword loginAndPasword){
         this.loginAndPasword = loginAndPasword;
-        loginAction();
+        return loginAction();
         //
 
     }
 
 
-    public void stopWorkTime(LoginAndPasword loginAndPasword){
+    public String stopWorkTime(LoginAndPasword loginAndPasword){
         this.loginAndPasword = loginAndPasword;
-        loginAction();
+        return loginAction();
         //
-
     }
 }
