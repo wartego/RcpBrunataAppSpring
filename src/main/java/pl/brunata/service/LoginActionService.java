@@ -14,6 +14,7 @@ public class LoginActionService {
     private WebDriver driver;
 
     public String loginAction(){
+        driver = null;
 
         driver = new ChromeDriver();
         driver.get("https://rcp.brunata-zenner.pl/");
@@ -46,9 +47,10 @@ public class LoginActionService {
         this.loginAndPasword = loginAndPasword;
         String loginAction = loginAction();
         //
-        WebElement startWorkButton = driver.findElement(By.xpath(""));
-                startWorkButton.click();
-        driver.close();
+       // WebElement startWorkButton = driver.findElement(By.xpath(""));
+        //        startWorkButton.click();
+        driver.quit();
+       // driver.close();
         return loginAction;
     }
 
@@ -57,9 +59,10 @@ public class LoginActionService {
         this.loginAndPasword = loginAndPasword;
         String loginAction = loginAction();
 
-        WebElement stopWorkButton = driver.findElement(By.xpath(""));
-        stopWorkButton.click();
-        driver.close();
+       // WebElement stopWorkButton = driver.findElement(By.xpath(""));
+        //stopWorkButton.click();
+        driver.quit();
+       // driver.close();
 
         return loginAction;
     }
@@ -70,7 +73,8 @@ public class LoginActionService {
 
         WebElement brakeWorkButton = driver.findElement(By.xpath(""));
         brakeWorkButton.click();
-        driver.close();
+        driver.quit();
+       // driver.close();
       return loginAction;
     }
 

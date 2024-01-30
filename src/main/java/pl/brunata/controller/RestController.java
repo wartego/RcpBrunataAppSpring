@@ -17,11 +17,6 @@ public class RestController {
     private final LoginActionService loginActionService;
 
 
-
-
-
-
-
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ResponseBody
