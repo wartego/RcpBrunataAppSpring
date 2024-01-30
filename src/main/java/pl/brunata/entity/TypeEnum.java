@@ -1,5 +1,5 @@
 package pl.brunata.entity;
 
 public enum TypeEnum {
-    LOGIN,LOGOUT
+    LOGIN,LOGOUT,BRAKE
 }
